@@ -14,7 +14,6 @@ import {
   Edit,
   Trash2,
   Copy,
-  ArrowLeft,
   FileText,
   Mail,
   Settings
@@ -126,28 +125,12 @@ const WorkflowBuilderPage = () => {
   if (view === 'create' || view === 'edit') {
     return (
       <AppLayout>
-        <div className="h-full flex flex-col space-y-4">
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" onClick={() => setView('list')}>
-              <ArrowLeft className="h-5 w-5" />
-            </Button>
-            <div>
-              <h1 className="text-2xl font-bold text-foreground">
-                {view === 'create' ? 'Create Workflow' : 'Edit Workflow'}
-              </h1>
-              <p className="text-muted-foreground">
-                {view === 'create' 
-                  ? 'Design a new approval workflow using drag and drop' 
-                  : 'Modify your existing workflow configuration'}
-              </p>
-            </div>
-          </div>
-          <div className="flex-1 min-h-0">
-            <WorkflowBuilder 
-              workflowName={view === 'edit' ? 'Standard PR Approval' : 'New Workflow'}
-              onSave={handleSaveWorkflow}
-            />
-          </div>
+        <div className="h-[calc(100vh-2rem)]">
+          <WorkflowBuilder 
+            workflowName={view === 'edit' ? 'Standard PR Approval' : 'New Workflow'}
+            onSave={handleSaveWorkflow}
+            onCancel={() => setView('list')}
+          />
         </div>
       </AppLayout>
     );
