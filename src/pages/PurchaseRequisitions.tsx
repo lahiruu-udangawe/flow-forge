@@ -132,6 +132,7 @@ const getPriorityBadge = (priority: string) => {
 const PurchaseRequisitions = () => {
   const [view, setView] = useState<'list' | 'create'>('list');
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const filteredPRs = mockPRs.filter(pr => 
     pr.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
