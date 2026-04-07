@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { MemoForm } from "@/components/memo/MemoForm";
 import { Card, CardContent } from "@/components/ui/card";
