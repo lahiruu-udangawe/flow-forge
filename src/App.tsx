@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import PurchaseRequisitions from "./pages/PurchaseRequisitions";
 import PRDetail from "./pages/PRDetail";
 import Memos from "./pages/Memos";
+import MemoDetail from "./pages/MemoDetail";
 import WorkflowBuilderPage from "./pages/WorkflowBuilderPage";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/purchase-requisitions/:id" element={<PRDetail />} />
           <Route path="/memos" element={<Memos />} />
           <Route path="/memos/new" element={<Memos />} />
+          <Route path="/memos/:id" element={<MemoDetail />} />
           <Route path="/workflow-builder" element={<WorkflowBuilderPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

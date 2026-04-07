@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { MemoForm } from "@/components/memo/MemoForm";
 import { Card, CardContent } from "@/components/ui/card";
@@ -126,6 +127,7 @@ const getPriorityBadge = (priority: string) => {
 const Memos = () => {
   const [view, setView] = useState<'list' | 'create'>('list');
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const filteredMemos = mockMemos.filter(memo => 
     memo.subject.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -260,8 +262,18 @@ const Memos = () => {
               <TableBody>
                 {filteredMemos.map((memo) => (
                   <TableRow key={memo.id} className="border-border">
-                    <TableCell className="font-medium text-primary">{memo.id}</TableCell>
-                    <TableCell className="max-w-[200px] truncate">{memo.subject}</TableCell>
+                    <TableCell
+                      className="font-medium text-primary cursor-pointer hover:underline"
+                      onClick={() => navigate(`/memos/${memo.id}`)}
+                    >
+                      {memo.id}
+                    </TableCell>
+                    <TableCell
+                      className="max-w-[200px] truncate cursor-pointer hover:underline"
+                      onClick={() => navigate(`/memos/${memo.id}`)}
+                    >
+                      {memo.subject}
+                    </TableCell>
                     <TableCell>{memo.from}</TableCell>
                     <TableCell>{memo.to}</TableCell>
                     <TableCell>{getPriorityBadge(memo.priority)}</TableCell>
