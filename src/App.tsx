@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import PurchaseRequisitions from "./pages/PurchaseRequisitions";
 import PRDetail from "./pages/PRDetail";
 import Memos from "./pages/Memos";
+import MemoDetail from "./pages/MemoDetail";
 import WorkflowBuilderPage from "./pages/WorkflowBuilderPage";
 import NotFound from "./pages/NotFound";
 
