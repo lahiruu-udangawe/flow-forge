@@ -127,6 +127,7 @@ const getPriorityBadge = (priority: string) => {
 const Memos = () => {
   const [view, setView] = useState<'list' | 'create'>('list');
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const filteredMemos = mockMemos.filter(memo => 
     memo.subject.toLowerCase().includes(searchQuery.toLowerCase()) ||
