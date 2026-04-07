@@ -268,8 +268,18 @@ const PurchaseRequisitions = () => {
               <TableBody>
                 {filteredPRs.map((pr) => (
                   <TableRow key={pr.id} className="border-border">
-                    <TableCell className="font-medium text-primary">{pr.id}</TableCell>
-                    <TableCell className="max-w-[200px] truncate">{pr.title}</TableCell>
+                    <TableCell
+                      className="font-medium text-primary cursor-pointer hover:underline"
+                      onClick={() => navigate(`/purchase-requisitions/${pr.id}`)}
+                    >
+                      {pr.id}
+                    </TableCell>
+                    <TableCell
+                      className="max-w-[200px] truncate cursor-pointer hover:underline"
+                      onClick={() => navigate(`/purchase-requisitions/${pr.id}`)}
+                    >
+                      {pr.title}
+                    </TableCell>
                     <TableCell>{pr.department}</TableCell>
                     <TableCell className="font-medium">
                       {pr.currency} {pr.amount.toLocaleString()}
