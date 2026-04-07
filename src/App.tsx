@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import PurchaseRequisitions from "./pages/PurchaseRequisitions";
+import PRDetail from "./pages/PRDetail";
 import Memos from "./pages/Memos";
 import WorkflowBuilderPage from "./pages/WorkflowBuilderPage";
 import NotFound from "./pages/NotFound";
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Dashboard />} />
           <Route path="/purchase-requisitions" element={<PurchaseRequisitions />} />
           <Route path="/purchase-requisitions/new" element={<PurchaseRequisitions />} />
+          <Route path="/purchase-requisitions/:id" element={<PRDetail />} />
           <Route path="/memos" element={<Memos />} />
           <Route path="/memos/new" element={<Memos />} />
           <Route path="/workflow-builder" element={<WorkflowBuilderPage />} />
