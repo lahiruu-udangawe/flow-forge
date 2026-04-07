@@ -26,6 +26,7 @@ const App = () => (
           <Route path="/purchase-requisitions/:id" element={<PRDetail />} />
           <Route path="/memos" element={<Memos />} />
           <Route path="/memos/new" element={<Memos />} />
+          <Route path="/memos/:id" element={<MemoDetail />} />
           <Route path="/workflow-builder" element={<WorkflowBuilderPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

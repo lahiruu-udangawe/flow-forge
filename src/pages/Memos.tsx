@@ -262,8 +262,18 @@ const Memos = () => {
               <TableBody>
                 {filteredMemos.map((memo) => (
                   <TableRow key={memo.id} className="border-border">
-                    <TableCell className="font-medium text-primary">{memo.id}</TableCell>
-                    <TableCell className="max-w-[200px] truncate">{memo.subject}</TableCell>
+                    <TableCell
+                      className="font-medium text-primary cursor-pointer hover:underline"
+                      onClick={() => navigate(`/memos/${memo.id}`)}
+                    >
+                      {memo.id}
+                    </TableCell>
+                    <TableCell
+                      className="max-w-[200px] truncate cursor-pointer hover:underline"
+                      onClick={() => navigate(`/memos/${memo.id}`)}
+                    >
+                      {memo.subject}
+                    </TableCell>
                     <TableCell>{memo.from}</TableCell>
                     <TableCell>{memo.to}</TableCell>
                     <TableCell>{getPriorityBadge(memo.priority)}</TableCell>
