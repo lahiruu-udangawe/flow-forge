@@ -28,6 +28,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import ApprovalActions from "@/components/approval/ApprovalActions";
+import ExportActions from "@/components/approval/ExportActions";
 
 interface ApprovalStep {
   id: string;
@@ -317,6 +318,9 @@ const PRDetail = () => {
             itemType="PR"
           />
         )}
+
+        {/* Export / Print Actions */}
+        <ExportActions itemType="PR" detail={pr} steps={steps} />
 
         {/* Approval History Table */}
         {historyEntries.length > 0 && (
