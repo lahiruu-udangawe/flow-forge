@@ -11,7 +11,8 @@ import {
   Search,
   User,
   LogOut,
-  Settings
+  Settings,
+  BarChart3
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -35,6 +36,7 @@ const navigation = [
   { name: "Purchase Requisitions", href: "/purchase-requisitions", icon: FileText },
   { name: "Memos", href: "/memos", icon: Mail },
   { name: "Workflow Builder", href: "/workflow-builder", icon: GitBranch },
+  { name: "Reports", href: "/reports", icon: BarChart3 },
 ];
 
 export function AppLayout({ children }: AppLayoutProps) {
