@@ -28,6 +28,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import ApprovalActions from "@/components/approval/ApprovalActions";
 
 interface ApprovalStep {
   id: string;
@@ -304,6 +305,15 @@ const MemoDetail = () => {
             </CardContent>
           </Card>
         </div>
+
+        {/* Approval Actions */}
+        {steps.some((s) => s.status === "pending") && (
+          <ApprovalActions
+            currentApprover={steps.find((s) => s.status === "pending")!.approverName}
+            itemId={memo.id}
+            itemType="Memo"
+          />
+        )}
 
         {/* Approval History Table */}
         {historyEntries.length > 0 && (
