@@ -36,6 +36,7 @@ const navigation = [
   { name: "Purchase Requisitions", href: "/purchase-requisitions", icon: FileText },
   { name: "Memos", href: "/memos", icon: Mail },
   { name: "Workflow Builder", href: "/workflow-builder", icon: GitBranch },
+  { name: "Reports", href: "/reports", icon: BarChart3 },
 ];
 
 export function AppLayout({ children }: AppLayoutProps) {
