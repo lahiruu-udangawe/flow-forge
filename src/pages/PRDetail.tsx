@@ -319,6 +319,9 @@ const PRDetail = () => {
           />
         )}
 
+        {/* Export / Print Actions */}
+        <ExportActions itemType="PR" detail={pr} steps={steps} />
+
         {/* Approval History Table */}
         {historyEntries.length > 0 && (
           <Card className="border-border">

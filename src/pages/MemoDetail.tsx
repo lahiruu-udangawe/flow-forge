@@ -316,6 +316,9 @@ const MemoDetail = () => {
           />
         )}
 
+        {/* Export / Print Actions */}
+        <ExportActions itemType="Memo" detail={memo} steps={steps} />
+
         {/* Approval History Table */}
         {historyEntries.length > 0 && (
           <Card className="border-border">
