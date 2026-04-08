@@ -309,6 +309,15 @@ const PRDetail = () => {
           </Card>
         </div>
 
+        {/* Approval Actions */}
+        {steps.some((s) => s.status === "pending") && (
+          <ApprovalActions
+            currentApprover={steps.find((s) => s.status === "pending")!.approverName}
+            itemId={pr.id}
+            itemType="PR"
+          />
+        )}
+
         {/* Approval History Table */}
         {historyEntries.length > 0 && (
           <Card className="border-border">

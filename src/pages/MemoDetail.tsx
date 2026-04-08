@@ -306,6 +306,15 @@ const MemoDetail = () => {
           </Card>
         </div>
 
+        {/* Approval Actions */}
+        {steps.some((s) => s.status === "pending") && (
+          <ApprovalActions
+            currentApprover={steps.find((s) => s.status === "pending")!.approverName}
+            itemId={memo.id}
+            itemType="Memo"
+          />
+        )}
+
         {/* Approval History Table */}
         {historyEntries.length > 0 && (
           <Card className="border-border">
