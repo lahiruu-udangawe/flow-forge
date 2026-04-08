@@ -9,6 +9,7 @@ import PRDetail from "./pages/PRDetail";
 import Memos from "./pages/Memos";
 import MemoDetail from "./pages/MemoDetail";
 import WorkflowBuilderPage from "./pages/WorkflowBuilderPage";
+import Reports from "./pages/Reports";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
