@@ -27,6 +27,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import ApprovalActions from "@/components/approval/ApprovalActions";
 
 interface ApprovalStep {
   id: string;
